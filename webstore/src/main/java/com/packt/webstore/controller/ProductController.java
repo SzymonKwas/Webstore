@@ -17,7 +17,7 @@ import com.packt.webstore.service.ProductService;
 @Controller
 @RequestMapping("/products")
 public class ProductController {
-	
+
 	@Autowired
 	private ProductService productService;
 
@@ -26,31 +26,41 @@ public class ProductController {
 		model.addAttribute("products", productService.getAllProducts());
 		return "products";
 	}
-	
+
 	@RequestMapping("/all")
 	public ModelAndView allProducts() {
 		ModelAndView modelAndView = new ModelAndView();
-		
+
 		modelAndView.addObject("products", productService.getAllProducts());
 		modelAndView.setViewName("products");
 		return modelAndView;
 	}
-	
+
 	@RequestMapping("/{category}")
 	public String getProductsByCategory(@PathVariable("category") String productCategory, Model model) {
 		model.addAttribute("products", productService.getProductsByCategory(productCategory));
 		return "products";
 	}
-	
+
 	@RequestMapping("/filter/{ByCriteria}")
-	public String getProductsByFilter(@MatrixVariable(pathVar="ByCriteria") Map<String,List<String>> filterParams, Model model) {
+	public String getProductsByFilter(@MatrixVariable(pathVar = "ByCriteria") Map<String, List<String>> filterParams,
+			Model model) {
 		model.addAttribute("products", productService.getProductsByFilter(filterParams));
 		return "products";
 	}
+
+	@RequestMapping("/{category}/filter/byprice/{ByPrice}")
+	public String getProductsByPriceFilter(@PathVariable("category") String productCategory,
+			@MatrixVariable(pathVar = "ByPrice") Map<String, List<String>> filterParams, Model model) {
+		
+		model.addAttribute("products", productService.getProductsByPriceFilter(productCategory, filterParams));
+		return "products";
+	}
+
 	@RequestMapping("/product")
-	public String getProductById(@RequestParam("id")String productId, Model model){
+	public String getProductById(@RequestParam("id") String productId, Model model) {
 		model.addAttribute("product", productService.getProductById(productId));
 		return "product";
 	}
-	
+
 }

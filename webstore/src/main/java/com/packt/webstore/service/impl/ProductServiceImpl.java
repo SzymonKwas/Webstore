@@ -12,8 +12,8 @@ import com.packt.webstore.domain.repository.ProductRepository;
 import com.packt.webstore.service.ProductService;
 
 @Service
-public class ProductServiceImpl implements ProductService{
-	
+public class ProductServiceImpl implements ProductService {
+
 	@Autowired
 	private ProductRepository productRepository;
 
@@ -24,13 +24,18 @@ public class ProductServiceImpl implements ProductService{
 	public Product getProductById(String productID) {
 		return productRepository.getProductById(productID);
 	}
-	
+
 	public List<Product> getProductsByCategory(String category) {
 		return productRepository.getProductsByCategory(category);
 	}
 
 	public Set<Product> getProductsByFilter(Map<String, List<String>> filterParams) {
 		return productRepository.getProductsByFilter(filterParams);
+	}
+
+	
+	public Set<Product> getProductsByPriceFilter(String category,Map<String, List<String>> filterParams) {
+		return productRepository.getProductsByPriceFilter(category,filterParams);
 	}
 
 }
