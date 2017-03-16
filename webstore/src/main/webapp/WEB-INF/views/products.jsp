@@ -21,7 +21,7 @@
 	<section class="container">
 		<div class="row">
 			<c:forEach items="${products}" var="product">
-				<div class="col-sm-4 col-md-4" style="padding-bottom: 12px">
+				<div class="col-sm-9 col-md-4" style="padding-bottom: 15px">
 					<div class="thumbnail">
 						<div class="caption">
 							<h3>${product.name}</h3>
