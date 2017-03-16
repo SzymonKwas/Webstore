@@ -26,10 +26,15 @@
 						<div class="caption">
 							<h3>${product.name}</h3>
 							<p>${product.description}</p>
-							<p>${product.unitPrice} PLN</p>
+							<p>${product.unitPrice}PLN</p>
 							<p>Liczba sztuk w magazynie: ${product.unitsInStock}</p>
 							<p>
-								
+								<a
+									href=" <spring:url value="/products/product?id=${product.productId}" />
+									"class="btn btn-primary"> 
+									<span class="glyphicon-info-sign glyphicon" /></span> Szczegoly
+								</a>
+
 							</p>
 
 						</div>
