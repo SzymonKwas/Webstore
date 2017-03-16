@@ -47,5 +47,10 @@ public class ProductController {
 		model.addAttribute("products", productService.getProductsByFilter(filterParams));
 		return "products";
 	}
+	@RequestMapping("/product")
+	public String getProductById(@RequestParam("id")String productId, Model model){
+		model.addAttribute("product", productService.getProductById(productId));
+		return "products";
+	}
 	
 }
