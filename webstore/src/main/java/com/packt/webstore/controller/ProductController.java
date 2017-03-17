@@ -80,6 +80,7 @@ public class ProductController {
 
 	@RequestMapping(value = "/add", method = RequestMethod.POST)
 	public String processAddNewProductForm(@ModelAttribute("newProduct") Product newProduct, BindingResult result) {
+		
 		String[] suppressedFields = result.getSuppressedFields();
 		if (suppressedFields.length > 0) {
 			throw new RuntimeException(

@@ -2,7 +2,7 @@
 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
-
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
 <%@page pageEncoding="UTF-8" contentType="text/html; charset=UTF-8"%>
 
 <html>
@@ -26,8 +26,9 @@
 			<fieldset>
 				<legend>Dodaj nowy produkt</legend>
 				<div class="form-group">
-					<label class="control-label col-lg-2 col-lg-2" for="productId">Id
-						produktu</label>
+					<label class="control-label col-lg-2 col-lg-2" for="productId">
+					<spring:message code="addProduct.form.productId.label"/>
+					</label>
 					<div class="col-lg-10">
 						<form:input id="productId" path="productId" type="text"
 							class="form:input-large" />
@@ -42,7 +43,7 @@
 
 					</div>
 				</div>
-				
+
 				<div class="form-group">
 					<label class="control-label col-lg-2 col-lg-2" for="unitPrice">Cena</label>
 					<div class="col-lg-10">
@@ -66,9 +67,6 @@
 
 					</div>
 				</div>
-
-
-
 
 				<div class="form-group">
 					<label class="control-label col-lg-2" for="description">Opis</label>
