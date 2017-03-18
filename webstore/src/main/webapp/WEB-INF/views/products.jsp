@@ -24,9 +24,11 @@
 	<section class="container">
 		<div class="row">
 			<c:forEach items="${products}" var="product">
-				<div class="col-sm-9 col-md-4" style="padding-bottom: 15px">
+				<div class="col-sm-15 col-md-4"  style="padding-bottom: 15px ">
 					<div class="thumbnail">
 						<div class="caption">
+						<img src="<c:url value="/images/${product.productId}.png"/>"alt="image" style="width: 100%" />
+										
 							<h3>${product.name}</h3>
 							<p>${product.description}</p>
 							<p>${product.unitPrice}PLN</p>
@@ -40,6 +42,7 @@
 								</a>
 
 							</p>
+
 
 						</div>
 					</div>
