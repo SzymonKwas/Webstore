@@ -22,7 +22,8 @@
 		</div>
 	</section>
 	<section class="container">
-		<form:form modelAttribute="newProduct" class="form-horizontal" enctype="multipart/form-data">
+		<form:form modelAttribute="newProduct" class="form-horizontal"
+			enctype="multipart/form-data">
 			<fieldset>
 				<legend>Dodaj nowy produkt</legend>
 				<div class="form-group">
@@ -44,6 +45,17 @@
 							class="form:input-large" />
 					</div>
 				</div>
+				
+				<div class="form-group">
+					<label class="control-label col-lg-2" for="productPDF"> <spring:message
+							code="addProdcut.form.productPDF.label" />
+					</label>
+					<div class="col-lg-10">
+						<form:input id="productPDF" path="productPDF" type="file"
+							class="form:input-large" />
+					</div>
+				</div>
+				
 				<div class="form-group">
 					<label class="control-label col-lg-2 col-lg-2" for="name">Nazwa</label>
 					<div class="col-lg-10">

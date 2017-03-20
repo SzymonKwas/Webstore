@@ -16,7 +16,17 @@ public class Product {
 	private long unitsInOrder;
 	private boolean discontinued;
 	private String condition;
+	
 	private MultipartFile productImage;
+	private MultipartFile productPDF;
+
+	public MultipartFile getProductPDF() {
+		return productPDF;
+	}
+
+	public void setProductPDF(MultipartFile productPDF) {
+		this.productPDF = productPDF;
+	}
 
 	public MultipartFile getProductImage() {
 		return productImage;

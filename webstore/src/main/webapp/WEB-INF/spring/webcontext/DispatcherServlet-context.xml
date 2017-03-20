@@ -12,7 +12,8 @@
 	<context:component-scan base-package="com.packt.webstore" />
 
 	<mvc:resources mapping="/images/**" location="resources/images/" />
-
+	<mvc:resources mapping="/pdf/**" location="resources/pdf/" />
+	
 	<bean
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<property name="prefix" value="/WEB-INF/views/" />
@@ -26,6 +27,5 @@
 		class="org.springframework.context.support.ResourceBundleMessageSource">
 		<property name="basename" value="messages" />
 	</bean>
-
 
 </beans>
