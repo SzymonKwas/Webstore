@@ -19,23 +19,23 @@ public class PerformanceMonitorInterceptor implements HandlerInterceptor {
 		StopWatch stopWatch = new StopWatch(handler.toString());
 		stopWatch.start(handler.toString());
 		stopWatchLocal.set(stopWatch);
-		logger.info("Przetwarzanie ¿¹dania do œcie¿ki: " + getURLPath(request));
-		logger.info("Przetwarzanie ¿¹dania rozpoczêto o: " + getCurrentTime());
+//		logger.info("Przetwarzanie ¿¹dania do œcie¿ki: " + getURLPath(request));
+//		logger.info("Przetwarzanie ¿¹dania rozpoczêto o: " + getCurrentTime());
 		return true;
 	}
 
 	public void postHandle(HttpServletRequest arg0, HttpServletResponse response, Object handler,
 			ModelAndView modelAndView) throws Exception {
-		logger.info("Przetwarzanie ¿¹dania zakoñczono o: " + getCurrentTime());
+//		logger.info("Przetwarzanie ¿¹dania zakoñczono o: " + getCurrentTime());
 	}
 
 	public void afterCompletion(HttpServletRequest request, HttpServletResponse response, Object handler,
 			Exception exception) throws Exception {
 		StopWatch stopWatch = stopWatchLocal.get();
 		stopWatch.stop();
-		logger.info("£¹czny czas przetwarzania ¿¹dania: " + stopWatch.getTotalTimeMillis() + " ms");
+//		logger.info("£¹czny czas przetwarzania ¿¹dania: " + stopWatch.getTotalTimeMillis() + " ms");
 		stopWatchLocal.set(null);
-		logger.info("=======================================================");
+//		logger.info("=======================================================");
 	}
 
 	private String getURLPath(HttpServletRequest request) {
