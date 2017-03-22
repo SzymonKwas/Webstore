@@ -11,10 +11,15 @@ import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlTransient;
 
 import org.springframework.web.multipart.MultipartFile;
+
+import com.packt.webstore.validator.Category;
+import com.packt.webstore.validator.ProductId;
+
 import org.codehaus.jackson.annotate.JsonIgnore;
 
 @XmlRootElement
 public class Product {
+	@ProductId
 	@Pattern(regexp = "P[0-9]+", message = "{Pattern.Product.productId.validation}")
 	private String productId;
 	@Size(min = 4, max = 50, message = "{Size.Product.name.validation}")
@@ -26,6 +31,7 @@ public class Product {
 	private String description;
 
 	private String manufacturer;
+	@Category
 	@Size(min = 1, max = 50, message = "{@Size.Product.category.validation}")
 	private String category;
 	@Min(value = 0, message = "{Min.Product.unitsInStock.validation}")

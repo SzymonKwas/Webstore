@@ -18,7 +18,7 @@
 				<a href="<c:url value="/j_spring_security_logout" />"
 					class="btn btn-dangerbtn-mini pull-right"><spring:message
 						code="addProduct.form.logOut.inscription" /></a>
-				<div class="pull-right" style="padding-right: 50px">
+				<div class="pull-right" style="padding-right: 35px">
 					<a href="?language=pl">polski</a>|<a href="?language=nl">nederlands</a>
 				</div>
 
