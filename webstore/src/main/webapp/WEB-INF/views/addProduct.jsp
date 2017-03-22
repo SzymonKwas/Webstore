@@ -1,13 +1,14 @@
+<%@page pageEncoding="UTF-8" contentType="text/html; charset=UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
-<%@page pageEncoding="UTF-8" contentType="text/html; charset=UTF-8"%>
+
 
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <link rel="stylesheet"
-	href="//netdna.bootstrapcdn.com/bootstrap/ 3.0.0/css/bootstrap.min.css">
+	href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css">
 <title><spring:message code="addProduct.form.product.title" /></title>
 </head>
 <body>
@@ -15,21 +16,29 @@
 		<div class="jumbotron">
 			<div class="container">
 				<a href="<c:url value="/j_spring_security_logout" />"
-					class="btn btn-dangerbtn-mini pull-right"><spring:message code="addProduct.form.logOut.inscription" /></a>
+					class="btn btn-dangerbtn-mini pull-right"><spring:message
+						code="addProduct.form.logOut.inscription" /></a>
 				<div class="pull-right" style="padding-right: 50px">
 					<a href="?language=pl">polski</a>|<a href="?language=nl">nederlands</a>
 				</div>
 
-				<h1><spring:message code="addProduct.form.product.title" /></h1>
-				<p><spring:message code="addProduct.form.addProducts.inscription" /></p>
+				<h1>
+					<spring:message code="addProduct.form.product.title" />
+				</h1>
+				<p>
+					<spring:message code="addProduct.form.addProducts.inscription" />
+				</p>
 			</div>
 		</div>
 	</section>
 	<section class="container">
 		<form:form modelAttribute="newProduct" class="form-horizontal"
 			enctype="multipart/form-data">
+			<form:errors path="*" cssClass="alert alert-danger" element="div" />
 			<fieldset>
-				<legend><spring:message code="addProduct.form.addNewProduct.legend" /></legend>
+				<legend>
+					<spring:message code="addProduct.form.addNewProduct.legend" />
+				</legend>
 				<div class="form-group">
 					<label class="control-label col-lg-2 col-lg-2" for="productId">
 						<spring:message code="addProduct.form.productId.label" />
@@ -37,6 +46,7 @@
 					<div class="col-lg-10">
 						<form:input id="productId" path="productId" type="text"
 							class="form:input-large" />
+						<form:errors path="productId" cssClass="text-danger" />
 
 					</div>
 				</div>
@@ -66,6 +76,7 @@
 					<div class="col-lg-10">
 						<form:input id="name" path="name" type="text"
 							class="form:input-large" />
+						<form:errors path="name" cssClass="text-danger" />
 
 					</div>
 				</div>
@@ -76,6 +87,7 @@
 					<div class="col-lg-10">
 						<form:input id="unitPrice" path="unitPrice" type="text"
 							class="form:input-large" />
+						<form:errors path="unitPrice" cssClass="text-danger" />
 					</div>
 				</div>
 				<div class="form-group">
@@ -84,6 +96,7 @@
 					<div class="col-lg-10">
 						<form:input id="category" path="category" type="text"
 							class="form:input-large" />
+						<form:errors path="category" cssClass="text-danger" />
 
 					</div>
 				</div>
@@ -111,6 +124,7 @@
 					<div class="col-lg-10">
 						<form:input id="unitsInStock" path="unitsInStock" type="text"
 							class="form:input-large" />
+							<form:errors path="unitsInStock" cssClass="text-danger" />
 
 					</div>
 				</div>
@@ -119,14 +133,11 @@
 							code="addProduct.form.condition.label" /></label>
 					<div class="col-lg-10">
 						<form:radiobutton path="condition" value="New" />
-						<spring:message
-							code="addProduct.form.new.label" />
+						<spring:message code="addProduct.form.new.label" />
 						<form:radiobutton path="condition" value="Old" />
-						<spring:message
-							code="addProduct.form.old.label" />
+						<spring:message code="addProduct.form.old.label" />
 						<form:radiobutton path="condition" value="Refurbished" />
-						<spring:message
-							code="addProduct.form.refreshed.label" />
+						<spring:message code="addProduct.form.refreshed.label" />
 					</div>
 				</div>
 				<div class="form-group">
