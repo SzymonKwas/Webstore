@@ -14,12 +14,12 @@ public class InMemoryCustomerRepository implements CustomerRepository {
 
 	public InMemoryCustomerRepository() {
 
-		Customer customer1 = new Customer("C001", "Andrzej Pisiarkczyk", "Wolska 6/7");
-		customer1.setNoOfOrdersMade(false);
-		Customer customer2 = new Customer("C002", "Kazimierz Kat", "Pilsudzkiego 6/3");
-		customer2.setNoOfOrdersMade(false);
-		Customer customer3 = new Customer("C003", "Sonia Wilczynska", "Dolna 6A");
-		customer3.setNoOfOrdersMade(false);
+		Customer customer1 = new Customer("C001", "Andrzej Pisiarkczyk");
+		
+		Customer customer2 = new Customer("C002", "Kazimierz Kat");
+	
+		Customer customer3 = new Customer("C003", "Sonia Wilczynska");
+		
 
 		customers.add(customer1);
 		customers.add(customer2);

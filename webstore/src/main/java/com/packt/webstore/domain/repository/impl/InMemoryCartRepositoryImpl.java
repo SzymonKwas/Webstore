@@ -17,7 +17,7 @@ public class InMemoryCartRepositoryImpl implements CartRepository {
 	public Cart create(Cart cart) {
 		if (listOfCarts.keySet().contains(cart.getCartId())) {
 			throw new IllegalArgumentException(String
-					.format("Nie moÅ¼na utworzyÄ‡ koszyka. Koszyk o wskazanym id (%) juÅ¼ istnieje.", cart.getCartId()));
+					.format("Nie moÅ¼na utworzyæ koszyka. Koszyk o wskazanym id (%) ju¿ istnieje.", cart.getCartId()));
 		}
 		listOfCarts.put(cart.getCartId(), cart);
 		return cart;
@@ -30,7 +30,7 @@ public class InMemoryCartRepositoryImpl implements CartRepository {
 	public void update(String cartId, Cart cart) {
 		if (!listOfCarts.keySet().contains(cartId)) {
 			throw new IllegalArgumentException(
-					String.format("Nie moÅ¼na zaktualizowaÄ‡ koszyka. Koszyk o wskazanym id (%) nie istnieje.", cartId));
+					String.format("Nie mo¿na zaktualizowaæ koszyka. Koszyk o wskazanym id (%) nie istnieje.", cartId));
 		}
 		listOfCarts.put(cartId, cart);
 	}
@@ -38,7 +38,7 @@ public class InMemoryCartRepositoryImpl implements CartRepository {
 	public void delete(String cartId) {
 		if (!listOfCarts.keySet().contains(cartId)) {
 			throw new IllegalArgumentException(
-					String.format("Nie moÅ¼na usunÄ…Ä‡ koszyka. Koszyk o wskazanym id (%) nie istnieje.", cartId));
+					String.format("Nie mo¿na usun¹æ koszyka. Koszyk o wskazanym id (%) nie istnieje.", cartId));
 		}
 		listOfCarts.remove(cartId);
 	}

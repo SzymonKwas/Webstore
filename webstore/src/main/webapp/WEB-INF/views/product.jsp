@@ -22,7 +22,7 @@
 		<div class="row">
 			<div class="col-md-5">
 				<h3>${product.name}</h3>
-				<img src="<c:url value="/resource/images/${product.productId}.png"></c:url>" alt="image"  style = "width:80%"/>
+				<img src="<c:url value="/images/${product.productId}.png"/>"alt="image" style="width: 80%" />
 				<p>${product.description}</p>
 				<p>
 
