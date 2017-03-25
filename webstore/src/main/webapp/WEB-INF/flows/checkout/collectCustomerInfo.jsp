@@ -24,13 +24,6 @@
 				<legend>Szczegoly klienta</legend>
 
 				<div class="form-group">
-					<label class="control-label col-lg-2 col-lg-2" for="customerId" />Identyfikator klienta</label>
-					<div class="col-lg-10">
-						<form:input id="customerId" path="customerId" type="text" class="form:input-large" />
-					</div>
-				</div>
-
-				<div class="form-group">
 					<label class="control-label col-lg-2" for="name">Imie</label>
 					<div class="col-lg-10">
 						<form:input id="name" path="name" type="text" class="form:input-large" />
