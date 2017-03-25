@@ -17,7 +17,7 @@ public class InMemoryCartRepositoryImpl implements CartRepository {
 	public Cart create(Cart cart) {
 		if (listOfCarts.keySet().contains(cart.getCartId())) {
 			throw new IllegalArgumentException(String
-					.format("Nie moÅ¼na utworzyæ koszyka. Koszyk o wskazanym id (%) ju¿ istnieje.", cart.getCartId()));
+					.format("Nie mozna utworzyæ koszyka. Koszyk o wskazanym id (%) ju¿ istnieje.", cart.getCartId()));
 		}
 		listOfCarts.put(cart.getCartId(), cart);
 		return cart;

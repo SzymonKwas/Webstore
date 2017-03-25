@@ -11,6 +11,22 @@ public class Address implements Serializable {
 	private String country;
 	private String zipCode;
 
+	public Address(String country, String state, String areaName, String zipCode, String streetName,
+			String doorNo) {
+		super();
+		this.doorNo = doorNo;
+		this.streetName = streetName;
+		this.areaName = areaName;
+		this.state = state;
+		this.country = country;
+		this.zipCode = zipCode;
+	}
+	
+	public Address() {
+		super();
+		
+	}
+
 	public String getDoorNo() {
 		return doorNo;
 	}
@@ -118,5 +134,4 @@ public class Address implements Serializable {
 		return true;
 	}
 
-	
 }

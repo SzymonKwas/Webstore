@@ -14,11 +14,17 @@ public class Customer implements Serializable {
 		this.billingAddress = new Address();
 	}
 
-	public Customer(String customerId, String name) {
-		this();
+	
+
+	public Customer(String customerId, String name, String phoneNumber, Address billingAddress) {
+		super();
 		this.customerId = customerId;
 		this.name = name;
+		this.billingAddress = billingAddress;
+		this.phoneNumber = phoneNumber;
 	}
+
+
 
 	public String getCustomerId() {
 		return customerId;

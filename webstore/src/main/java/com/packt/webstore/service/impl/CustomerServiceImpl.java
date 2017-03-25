@@ -15,10 +15,20 @@ public class CustomerServiceImpl implements CustomerService {
 	@Autowired
 	private CustomerRepository customerRepository;
 
-
 	public List<Customer> getAllCustomers() {
 		return customerRepository.getAllCustomers();
+	}
 
+	public void saveCustomer(Customer customer) {
+		customerRepository.saveCustomer(customer);
+	}
+
+	public Customer getCustomer(String customerId) {
+		return customerRepository.getCustomer(customerId);
+	}
+
+	public Boolean customerExists(String customerId) {
+		return customerRepository.customerExists(customerId);
 	}
 
 }
