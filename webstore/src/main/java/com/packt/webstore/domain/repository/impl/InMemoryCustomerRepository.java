@@ -51,10 +51,8 @@ public class InMemoryCustomerRepository implements CustomerRepository {
 	public Boolean customerExists(String customerId) {
 		for (Customer customer : customers) {
 			if (customer.getCustomerId().equalsIgnoreCase(customerId)) {
-				System.out.println("Istnieje! " + customer.getName() + " " + customer.getCustomerId());
 				return true;
 			}
-			System.out.println("Nie istnieje");
 		}
 		return false;
 	}
