@@ -6,7 +6,7 @@
 
 	<var name="order" class="com.packt.webstore.domain.Order" />
 	<var name="customer" class="com.packt.webstore.domain.Customer" />
-	
+
 	<action-state id="addCartToOrder">
 		<evaluate expression="cartServiceImpl.validate(requestParameters.cartId)"
 			result="order.cart" />
@@ -23,7 +23,7 @@
 	</view-state>
 
 	<decision-state id="checkCustomerExist">
-	<if test="customerServiceImpl.customerExists(order.customer.customerId)"
+		<if test="customerServiceImpl.customerExists(order.customer.customerId)"
 			then="copyCustomerInfo" else="collectCustomerInfo" />
 	</decision-state>
 
@@ -54,16 +54,27 @@
 	<action-state id="processOrder">
 		<evaluate expression="orderServiceImpl.saveOrder(order)"
 			result="order.orderId" />
-		<transition to="thankCustomer" />
+		<transition to="checkCustomerExist2" />
 	</action-state>
 
 	<view-state id="InvalidCartWarning">
 		<transition to="endState" />
 	</view-state>
 
+	<decision-state id="checkCustomerExist2">
+		<if test="customerServiceImpl.customerExists(order.customer.customerId)"
+			then="thankCustomer" else="saveCustomer" />
+	</decision-state>
+
+	<action-state id="saveCustomer">
+		<evaluate expression="customerServiceImpl.saveCustomer(order.customer)" />
+		<transition to="thankCustomer" />
+	</action-state>
+
 	<view-state id="thankCustomer" model="order">
 		<transition to="endState" />
 	</view-state>
+
 
 	<end-state id="endState" />
 

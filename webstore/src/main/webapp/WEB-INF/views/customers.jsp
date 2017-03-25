@@ -26,8 +26,8 @@
 						<div class="caption">
 							<h3>${customer.customerId}</h3>
 							<p>${customer.name}</p>
-							<p>${customer.address} PLN</p>
-							<p>Zlozyl zamowienie: ${customer.noOfOrdersMade}</p>
+							<p>${customer.phoneNumber} </p>
+					
 							<p></p>
 						</div>
 					</div>
