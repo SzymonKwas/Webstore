@@ -15,9 +15,9 @@
 	
 	<definition name="welcome" extends="baseLayout">
 		<put-attribute name="title" value="Produkty" />
-		<put-attribute name="heading" value="Produkty" />
-		<put-attribute name="tagline" value="Dostępne produkty" />
-		<put-attribute name="content" value="/WEB-INF/views/products.jsp" />
+		<put-attribute name="heading" value="Witaj w sklepie internetowym!" />
+		<put-attribute name="tagline" value="Wyjatkowym i jedynym sklepie internetowym" />
+		<put-attribute name="content" value="/WEB-INF/views/welcome.jsp" />
 	</definition>
 	
 	<definition name="products" extends="baseLayout">

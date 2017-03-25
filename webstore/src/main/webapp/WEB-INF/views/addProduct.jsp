@@ -13,7 +13,6 @@
 </head>
 <body>
 	<section>
-		<div class="jumbotron">
 			<div class="container">
 				<a href="<c:url value="/j_spring_security_logout" />"
 					class="btn btn-dangerbtn-mini pull-right"><spring:message
@@ -21,15 +20,7 @@
 				<div class="pull-right" style="padding-right: 35px">
 					<a href="?language=pl">polski</a>|<a href="?language=nl">nederlands</a>
 				</div>
-
-				<h1>
-					<spring:message code="addProduct.form.product.title" />
-				</h1>
-				<p>
-					<spring:message code="addProduct.form.addProducts.inscription" />
-				</p>
 			</div>
-		</div>
 	</section>
 	<section class="container">
 		<form:form modelAttribute="newProduct" class="form-horizontal"

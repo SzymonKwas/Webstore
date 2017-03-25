@@ -9,21 +9,6 @@
 </head>
 <body>
 	<section>
-		<div class="jumbotron">
-			<div class="container">
-				<h1>${greeting}</h1>
-				<p>${tagline}</p>
-				<p>
-				</p>
-				<p>
-					<a href="<c:url value='/products/'/>"> Przejdź dalej</a>
-				</p>
-			</div>
-
-		</div>
-	</section>
-	<section>
-
 		<div>
 			<p></p>
 			<img src="<c:url value="images/greeting.jpg"/>" alt="image"

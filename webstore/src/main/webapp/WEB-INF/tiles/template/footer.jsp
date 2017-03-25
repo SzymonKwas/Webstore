@@ -1,1 +1,1 @@
-<p>&copy; Firma 2014</p>
+<p>&copy; Strona internetowa testowa 2017</p>
